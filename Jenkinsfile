@@ -4,17 +4,17 @@ node {
     git credentialsId: 'anshu8755993241', url: 'https://github.com/itrainwarriors/maven-pro.git'  
    }
    stage('Code Build') {
-    withMaven(jdk: 'jdk', maven: 'maven-3.6.1') {
+    withMaven(jdk: 'jdk', maven: 'maven') {
      sh 'mvn clean compile'
     }  
    }
    stage('Unit Test') {
-       withMaven(jdk: 'jdk', maven: 'maven-3.6.1') {
+       withMaven(jdk: 'jdk', maven: 'maven') {
         sh 'mvn test'
      }  
    }
    stage('SonarQube Analysis') {
-       withMaven(jdk: 'jdk', maven: 'maven-3.6.1') {
+       withMaven(jdk: 'jdk', maven: 'maven') {
        sh 'mvn verify sonar:sonar \
           -Dsonar.projectKey=mavenexample-warrior \
           -Dsonar.organization=anshu \
