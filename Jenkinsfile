@@ -15,11 +15,11 @@ node {
    }
    stage('SonarQube Analysis') {
        withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
-       sh 'mvn sonar:sonar \
-           -Dsonar.projectKey=maven-example-padman \
-           -Dsonar.organization=itrainpadman \
-           -Dsonar.host.url=https://sonarcloud.io \
-           -Dsonar.login=ef4b147fcb4eea67d0e0a5a182f4b85289f2c8c1'
+       sh 'mvn verify sonar:sonar \
+          -Dsonar.projectKey=maven-pro-warriors \
+          -Dsonar.organization=itrainwarriors \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=2fb178159cb20ad53e509c20446600dc3de796bc '
        }
    } 
    stage('Archive to Jfrog') {
