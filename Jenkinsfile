@@ -1,20 +1,20 @@
 node {
    
    stage('Code Checkout') { // for display purposes
-    git credentialsId: 'githubid', url: 'https://github.com/itrainpadman/maven-examples.git'  
+    git credentialsId: 'githubID', url: 'https://github.com/itrainwarriors/maven-pro.git'  
    }
    stage('Code Build') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
      sh 'mvn clean compile'
     }  
    }
    stage('Unit Test') {
-       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+       withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
         sh 'mvn test'
      }  
    }
    stage('SonarQube Analysis') {
-       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+       withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
        sh 'mvn verify sonar:sonar \
           -Dsonar.projectKey=maven-pro-warriors \
           -Dsonar.organization=itrainwarriors \
