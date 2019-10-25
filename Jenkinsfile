@@ -16,10 +16,10 @@ node {
    stage('SonarQube Analysis') {
        withMaven(jdk: 'jdk', maven: 'maven') {
        sh mvn verify sonar:sonar \
-            -Dsonar.projectKey=Maven-pro-example \
-            -Dsonar.organization=itrainpulsars \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=c6769f157980296bb9ea4decb5097b55fb9cd23f
+                -Dsonar.projectKey=Maven-pro \
+                -Dsonar.organization=itrain-bharathi \
+                -Dsonar.host.url=https://sonarcloud.io \
+                -Dsonar.login=e959d32e0ba2ac95c51c943814547ddd8ff5fba9
        }
    } 
    stage('Archive to Jfrog') {
