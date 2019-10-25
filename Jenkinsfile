@@ -4,17 +4,17 @@ node {
     git credentialsId: 'mshakeer011', url: 'https://github.com/itrain-Bharathi/maven-pro.git'  
    }
    stage('Code Build') {
-    withMaven(jdk: 'jdk', maven: 'maven') {
+    withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
      sh 'mvn clean compile'
     }  
    }
    stage('Unit Test') {
-       withMaven(jdk: 'jdk', maven: 'maven') {
+       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
         sh 'mvn test'
      }  
    }
    stage('SonarQube Analysis') {
-       withMaven(jdk: 'jdk', maven: 'maven') {
+       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
        sh 'mvn sonar:sonar \
                 -Dsonar.projectKey=Maven-pro \
                 -Dsonar.organization=itrain-bharathi \
