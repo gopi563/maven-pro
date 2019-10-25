@@ -4,17 +4,17 @@ node {
     git credentialsId: 'gopi563', url: 'https://github.com/gopi563/maven-pro.git'  
    }
    stage('Code Build') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+    withMaven(jdk: 'jdk1.8', maven: 'maven3.6.1') {
      sh 'mvn clean compile'
     }  
    }
    stage('Unit Test') {
-       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+       withMaven(jdk: 'jdk1.8', maven: 'maven3.6.1') {
         sh 'mvn test'
      }  
    }
    stage('SonarQube Analysis') {
-       withMaven(jdk: 'JDK-1.8', maven: 'Maven3.6.1') {
+       withMaven(jdk: 'jdk1.8', maven: 'maven3.6.1') {
        sh 'mvn sonar:sonar \
              -Dsonar.projectKey=sonarproject112 \
              -Dsonar.organization=sponarproject \
