@@ -1,7 +1,7 @@
 node {
    
    stage('Code Checkout') { // for display purposes
-    git credentialsId: 'gopi563', url: 'https://github.com/gopi563/maven-pro.git'  
+    git credentialsId: 'github', url: 'https://github.com/gopi563/maven-pro.git'  
    }
    stage('Code Build') {
     withMaven(jdk: 'jdk1.8', maven: 'maven3.6.1') {
